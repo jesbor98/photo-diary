@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sweden – Jessica Borg</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>SWEDEN</h1>
+    <nav class="menu">
+      <a href="index.html">Tillbaka</a>
+    </nav>
+  </header>
+
+  <main class="masonry-gallery" id="gallery"></main>
+
+  <footer>
+    <p>&copy; 2025 Jessica Borg</p>
+  </footer>
+
+  <script>
+    const gallery = document.getElementById("gallery");
+  
+    const imageData = [
+      { src: "skellefteå1.jpg", location: "Skellefteå" },
+      { src: "skellefteå2.jpg", location: "Skellefteå" },
+      { src: "skellefteå3.jpg", location: "Skellefteå" },
+      { src: "skellefteå4.jpg", location: "Skellefteå" },
+      { src: "skellefteå5.jpg", location: "Skellefteå" },
+      { src: "skellefteå6.jpg", location: "Skellefteå" },
+      { src: "skellefteå7.jpg", location: "Skellefteå" },
+      { src: "skellefteå8.jpg", location: "Skellefteå" },
+      { src: "skellefteå9.jpg", location: "Skellefteå" },
+      { src: "stockholm1.jpg", location: "Stockholm" },
+      { src: "utö1.jpg", location: "Utö" },
+      { src: "utö2.jpg", location: "Utö" }
+    ];
+  
+    imageData.forEach(({ src, location }) => {
+      const container = document.createElement("div");
+      container.className = "image-wrapper";
+  
+      const img = document.createElement("img");
+      img.src = `sweden-photos/${src}`;
+      img.alt = location;
+  
+      const caption = document.createElement("div");
+      caption.className = "image-caption";
+      caption.textContent = location;
+  
+      container.appendChild(img);
+      container.appendChild(caption);
+      gallery.appendChild(container);
+    });
+  </script>
+  
+</body>
+</html>

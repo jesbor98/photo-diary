@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sweden – Jessica Borg</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>SWEDEN</h1>
+    <nav class="menu">
+      <a href="index.html">Tillbaka</a>
+    </nav>
+  </header>
+
+  <main class="masonry-gallery" id="gallery"></main>
+
+  <footer>
+    <p>&copy; 2025 Jessica Borg</p>
+  </footer>
+
+  <script>
+    const gallery = document.getElementById("gallery");
+  
+    const imageData = [
+    { src: "amsterdam1.jpg", location: "Amsterdam" },
+    { src: "amsterdam2.jpg", location: "Amsterdam" },
+    { src: "amsterdam3.jpg", location: "Amsterdam" },
+    { src: "amsterdam4.jpg", location: "Amsterdam" },
+    { src: "amsterdam5.jpg", location: "Amsterdam" },
+    { src: "amsterdam6.jpg", location: "Amsterdam" },
+    { src: "nijmegen1.jpg", location: "Nijmegen" }
+  ];
+
+  
+    imageData.forEach(({ src, location }) => {
+      const container = document.createElement("div");
+      container.className = "image-wrapper";
+  
+      const img = document.createElement("img");
+      img.src = `city-photos/${src}`;
+      img.alt = location;
+  
+      const caption = document.createElement("div");
+      caption.className = "image-caption";
+      caption.textContent = location;
+  
+      container.appendChild(img);
+      container.appendChild(caption);
+      gallery.appendChild(container);
+    });
+  </script>
+  
+</body>
+</html>

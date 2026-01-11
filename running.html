@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Running – Jessica Borg</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>RUNNING</h1>
+    <nav class="menu">
+      <a href="index.html">Tillbaka</a>
+    </nav>
+  </header>
+
+  <main class="masonry-gallery" id="gallery"></main>
+
+  <footer>
+    <p>&copy; 2025 Jessica Borg</p>
+  </footer>
+
+  <script>
+    const gallery = document.getElementById("gallery");
+  
+    const imageData = [
+      { src: "r1.jpg", location: "Val Roseg" },
+      { src: "r2.jpg", location: "Silvaplana" },
+      { src: "r3.jpg", location: "Silvaplana" },
+      { src: "r4.jpg", location: "Val Roseg" },
+      { src: "r5.jpg", location: "Val Roseg" },
+      { src: "r6.jpg", location: "Val Roseg" },
+      { src: "r7.jpg", location: "Sankt Moritz" },
+      { src: "r8.jpg", location: "Piz Mezdi" },
+      { src: "r9.jpg", location: "Silvaplana" },
+      { src: "r10.jpg", location: "Val Roseg" },
+      { src: "r11.jpg", location: "Val Roseg" },
+      { src: "r12.jpg", location: "Val Roseg" },
+      { src: "r13.jpg", location: "Silvaplana" },
+      { src: "r14.jpg", location: "Lac Du Bourget"  },
+      { src: "r15.jpg", location: "Lac Du Bourget" },
+      { src: "r16.jpg", location: "Sankt Moritz" },
+      { src: "r17.jpg", location: "Södra Djurgården" },
+      { src: "r18.jpg", location: "Djursholm" },
+      { src: "r19.jpg", location: "Limedsforsen" },
+      { src: "r20.jpg", location: "Limedsforsen" },
+      { src: "r21.jpg", location: "Limedsforsen" },
+      { src: "r22.jpg", location: "Enskede" },
+      { src: "r23.jpg", location: "Enskede" },
+      { src: "r24.jpg", location: "Lill-Jansskogen" },
+      { src: "r25.jpg", location: "Södra Djurgården" }
+    ];
+  
+    imageData.forEach(({ src, location }) => {
+      const container = document.createElement("div");
+      container.className = "image-wrapper";
+  
+      const img = document.createElement("img");
+      img.src = `running-photos/${src}`;
+      img.alt = location;
+  
+      const caption = document.createElement("div");
+      caption.className = "image-caption";
+      caption.textContent = location;
+  
+      container.appendChild(img);
+      container.appendChild(caption);
+      gallery.appendChild(container);
+    });
+  </script>
+  
+</body>
+</html>
